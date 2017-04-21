@@ -1,0 +1,13 @@
+.layout.layout--home {
+
+  padding: {
+    top: $navbar-height + $navbar-margin-bottom;
+  }
+
+  .content {
+
+    @extend .container;
+
+  }
+
+}
