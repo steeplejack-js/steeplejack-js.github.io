@@ -1,7 +1,13 @@
 .layout.layout--home {
 
   padding: {
-    top: $navbar-height + $navbar-margin-bottom;
+    top: $navbar-height ;
+  }
+
+  .jumbotron {
+    margin: {
+      top: -($navbar-margin-bottom);
+    }
   }
 
   .content {

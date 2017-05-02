@@ -1,0 +1,11 @@
+- name: Decide Your Strategy
+  description: >
+    Steeplejack is based on the Strategy Pattern. Write your software consistently without worrying about the
+    implementation.
+
+- name: HTTP and Sockets
+  description: >
+    HTTP and sockets are both first-class citizens. Once you've decided which framework you're using, you
+    can
+
+- name:

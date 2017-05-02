@@ -1,0 +1,95 @@
+---
+layout: home
+title: "NodeJS with less faff"
+---
+<div class="jumbotron jumbotron--home-page">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-9 col-lg-6">
+
+        <div class="lead">
+
+          <h1>
+            Node.js<br />
+            With less faff
+          </h1>
+
+          <p>
+            Build highly testable and loosely coupled Node.js applications fast
+          </p>
+
+          <a
+            class="btn btn-success btn-block btn-lg"
+            href="{{ '/quick-start' | preprend:site.baseurl }}">
+            Quick Start
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="content">
+
+  <div class="row">
+
+    <h1 class="text-center">
+      Wouldn't NodeJS be nice without the boilerplate?
+    </h1>
+
+    {% for panel in site.data.homePanels %}
+
+      <div class="col-md-{{ 12 | divided_by: forloop.length }}">
+
+        <div class="panel panel-none">
+
+          <div class="panel-body">
+            <h3>
+              {{ panel.name }}
+            </h3>
+
+            <div>
+              {{ panel.description }}
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    {% endfor %}
+
+  </div>
+
+  <div class="row">
+
+    {% for framework in site.data.frameworks %}
+
+    <div class="col-md-{{ 12 | divided_by: forloop.length }}">
+
+      <div class="panel panel-none">
+
+        <div class="panel-body">
+          <img
+            class="img-responsive text-center"
+            src="{{ '/assets/img/frameworks/' | append:framework.logo | prepend:site.baseurl }}"
+            alt="{{ framework.name }}" />
+        </div>
+
+      </div>
+
+    </div>
+
+    {% endfor %}
+
+  </div>
+
+</div>
