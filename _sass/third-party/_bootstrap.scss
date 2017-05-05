@@ -1,5 +1,15 @@
 $icon-font-path: "../bootstrap/fonts/bootstrap/";
 
-//@import "modules/bootswatch/solar/variables";
+@import "modules/bootswatch/solar/variables";
 @import "modules/bootstrap/bootstrap";
-//@import "modules/bootswatch/solar/bootswatch";
+@import "modules/bootswatch/solar/bootswatch";
+
+a {
+  outline: none;
+}
+
+.white-bg {
+  background: {
+    color: #fff
+  }
+}

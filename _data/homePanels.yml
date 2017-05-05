@@ -1,11 +1,13 @@
-- name: Decide Your Strategy
+- name: Pick a strategy
   description: >
-    Steeplejack is based on the Strategy Pattern. Write your software consistently without worrying about the
+    Steeplejack is built on the Strategy Pattern. Write your software consistently without worrying about the
     implementation.
 
-- name: HTTP and Sockets
+- name: HTTP and sockets
   description: >
     HTTP and sockets are both first-class citizens. Once you've decided which framework you're using, you
-    can
+    can start building immediately.
 
-- name:
+- name: Test test test
+  description: >
+    With dependency injection at the heart, getting 100% test coverage is easy - even for the most complex web apps.

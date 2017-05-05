@@ -10,9 +10,25 @@
     }
   }
 
-  .content {
+  section {
+    padding: {
+      bottom: $navbar-margin-bottom;
+    }
+  }
 
-    @extend .container;
+  .frameworks-wrapper {
+
+    img {
+      display: inline-block;
+      height: 64px;
+    }
+
+    .display_name {
+      font: {
+        size: 2.5em;
+        weight: 500;
+      }
+    }
 
   }
 

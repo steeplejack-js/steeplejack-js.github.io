@@ -2,7 +2,8 @@
   logo: express.png
 
 - name: Restify
+  display: Restify
   logo: restify.png
 
-- name: Hapi
-  logo: hapi.png
+- name: SocketIO
+  logo: socketio.svg

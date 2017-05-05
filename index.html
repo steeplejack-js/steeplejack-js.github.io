@@ -2,42 +2,94 @@
 layout: home
 title: "NodeJS with less faff"
 ---
-<div class="jumbotron jumbotron--home-page">
+<section class="jumbotron jumbotron--home-page">
 
   <div class="container">
 
     <div class="row">
 
-      <div class="col-md-9 col-lg-6">
+      <div class="lead">
 
-        <div class="lead">
+        <h1 class="text-center">
+          <strong class="text-primary">
+            NodeJS. With less faff
+          </strong>
+        </h1>
 
-          <h1>
-            Node.js<br />
-            With less faff
-          </h1>
-
-          <p>
-            Build highly testable and loosely coupled Node.js applications fast
-          </p>
-
-          <a
-            class="btn btn-success btn-block btn-lg"
-            href="{{ '/quick-start' | preprend:site.baseurl }}">
-            Quick Start
-          </a>
+        <div class="col-md-8 col-md-offset-2">
+          <h2 class="text-center">
+            Get rid of the boilerplate and build highly testable NodeJS applications fast
+          </h2>
 
         </div>
 
+      </div>
+
+      <div class="col-md-8 col-md-offset-2">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs nav-tabs-dark nav-border" role="tablist">
+
+          {% for tab in site.data.exampleTabs %}
+
+          {% if forloop.first %}
+            {% assign activeClass = 'active' %}
+          {% else %}
+            {% assign activeClass = '' %}
+          {% endif %}
+
+          <li role="presentation" class="{{ activeClass }} small">
+
+            <a
+              href="#example-tab-{{ forloop.index }}"
+              aria-controls="example-tab-{{ forloop.index }}"
+              role="tab"
+              data-toggle="tab">
+              {{ tab.name }}
+            </a>
+
+          </li>
+
+          {% endfor %}
+
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+          {% for tab in site.data.exampleTabs %}
+
+            {% if forloop.first %}
+              {% assign activeClass = 'active' %}
+            {% else %}
+              {% assign activeClass = '' %}
+            {% endif %}
+
+            <div role="tabpanel" class="nav-border tab-pane {{ activeClass }}" id="example-tab-{{ forloop.index }}">
+              <pre class="no-padding"><code class="{{ tab.language }}">{{ tab.example | escape }}</code></pre>
+            </div>
+
+          {% endfor %}
+
+        </div>
+
+      </div>
+
+      <div class="col-sm-4 col-sm-offset-4 col-xs-12">
+        <a
+          class="btn btn-success btn-block btn-lg"
+          href="{{ '/quick-start' | preprend:site.baseurl }}">
+          Quick Start
+        </a>
       </div>
 
     </div>
 
   </div>
 
-</div>
+</section>
 
-<div class="content">
+<section class="container">
 
   <div class="row">
 
@@ -52,7 +104,7 @@ title: "NodeJS with less faff"
         <div class="panel panel-none">
 
           <div class="panel-body">
-            <h3>
+            <h3 class="text-center">
               {{ panel.name }}
             </h3>
 
@@ -69,27 +121,39 @@ title: "NodeJS with less faff"
 
   </div>
 
-  <div class="row">
+</section>
 
-    {% for framework in site.data.frameworks %}
+<section class="white-bg">
 
-    <div class="col-md-{{ 12 | divided_by: forloop.length }}">
+  <div class="container frameworks-wrapper">
 
-      <div class="panel panel-none">
+    <div class="row">
 
-        <div class="panel-body">
+      <h1 class="text-center">
+        Built on the best known frameworks
+      </h1>
+
+      {% for framework in site.data.frameworks %}
+
+        <div class="col-md-{{ 12 | divided_by: forloop.length }}">
+
           <img
-            class="img-responsive text-center"
+            class="img-responsive img-rounded media-object"
             src="{{ '/assets/img/frameworks/' | append:framework.logo | prepend:site.baseurl }}"
             alt="{{ framework.name }}" />
+
+          {% if framework.display %}
+            <span class="display_name">
+              {{ framework.display }}
+            </span>
+          {% endif %}
+
         </div>
 
-      </div>
+      {% endfor %}
 
     </div>
 
-    {% endfor %}
-
   </div>
 
-</div>
+</section>

@@ -1,0 +1,13 @@
+- name: Tab 1
+  language: html
+  example: |
+    <div class="hello">
+      world
+    </div>
+
+- name: Tab 2
+  language: javascript
+  example: |
+    const hello = 'world';
+
+    console.log(hello);

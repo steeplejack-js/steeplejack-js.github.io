@@ -28,7 +28,7 @@
 
       <ul class="nav navbar-nav">
 
-        {% for node in site.navbar %}
+        {% for node in site.data.navbar %}
           {% if page.url == node.url %}
             <li class="active">
               <a href="{{ node.url }}" class="active">

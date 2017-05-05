@@ -16,8 +16,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-navbar:
-  - url: /url1
-    title: title1
-  - url: /url2
-    title: title2
+author: Simon Emms
+author_link: http://simonemms.com

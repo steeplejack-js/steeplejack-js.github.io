@@ -17,7 +17,11 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body class="site">
+
+    <div class="fork-me">
+      {% include fork-me.html %}
+    </div>
 
     <div class="layout layout--{{ page.layout }}">
       {{ content }}
@@ -25,6 +29,13 @@
 
     <script src="{{ '/assets/js/jquery-2.2.4.min.js' | prepend:site.baseurl }}"></script>
     <script src="{{ '/assets/bootstrap/javascripts/bootstrap.min.js' | prepend:site.baseurl }}"></script>
+    <script src="{{ '/assets/js/highlight-9.11.0.min.js' | prepend:site.baseurl }}"></script>
+    <script src="{{ '/assets/js/highlight-line-numbers.min.js' | prepend:site.baseurl }}"></script>
+
+    <script>
+      hljs.initHighlightingOnLoad();
+      hljs.initLineNumbersOnLoad();
+    </script>
 
   </body>
 
