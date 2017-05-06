@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+{% include navbar.html %}
+
+<div class="site-content">
+  <div class="container">
+    <div class="col-md-3">
+      <ul class="nav nav-pills nav-stacked">
+        {% for node in site.data.navbar %}
+
+          {% if page.url == node.url or page.nav == node.url %}
+
+            {% for item in node.child %}
+
+              <li>
+                <a href="{{ item.url | prepend: node.url | prepend: site.baseurl }}">
+                  {{ item.name }}
+                </a>
+              </li>
+
+            {% endfor %}
+
+          {% endif %}
+
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="col-md-9">
+      <h1>
+        {{ page.title }}
+      </h1>
+
+      <div>
+        {{ content }}
+      </div>
+
+      <div class="text-center">
+        {% if page.next or page.prev %}
+          <div class="btn-group" role="group">
+            {% if page.prev %}
+              <a
+                role="button"
+                class="btn btn-danger"
+                href="{{ page.prev.url | prepend: node.url | prepend: site.baseurl }}">
+                <i class="fa fa-arrow-left"></i> {{ page.prev.name }}
+              </a>
+            {% endif %}
+
+            {% if page.next %}
+              <a
+                role="button"
+                class="btn btn-success"
+                href="{{ page.next.url | prepend: node.url | prepend: site.baseurl }}">
+                  {{ page.next.name }}
+                  <i class="fa fa-arrow-right"></i>
+              </a>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% include footer.html %}

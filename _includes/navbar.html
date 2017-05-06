@@ -29,18 +29,17 @@
       <ul class="nav navbar-nav">
 
         {% for node in site.data.navbar %}
-          {% if page.url == node.url %}
-            <li class="active">
-              <a href="{{ node.url }}" class="active">
-                {{ node.title }}
-              </a></li>
-          {% else %}
-            <li>
-              <a href="{{ node.url }}">
-                {{ node.title }}
-              </a>
-            </li>
+          {% assign activeClass = '' %}
+
+          {% if page.url == node.url or page.nav == node.url %}
+            {% assign activeClass = 'active' %}
           {% endif %}
+
+          <li class="{{ activeClass }}">
+            <a href="{{ node.url | preprend:site.baseurl }}">
+              {{ node.title }}
+            </a>
+          </li>
         {% endfor %}
 
       </ul>

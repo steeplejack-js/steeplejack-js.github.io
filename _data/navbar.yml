@@ -1,4 +1,9 @@
-- url: /url1
-  title: title1a
-- url: /url2
-  title: title2a
+- url: /getting-started/
+  title: Getting Started
+  child:
+    - name: Installation
+      url: ''
+    - name: Your First App
+      url: 'your-first-app'
+- url: /docs/
+  title: Documentation

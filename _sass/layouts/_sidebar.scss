@@ -1,0 +1,19 @@
+.layout.layout--sidebar {
+
+  padding: {
+    top: $navbar-height;
+  }
+
+  .site-content {
+
+    .container {
+
+      margin: {
+        top: $navbar-margin-bottom;
+      }
+
+    }
+
+  }
+
+}
