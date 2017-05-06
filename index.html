@@ -17,59 +17,9 @@ title: "NodeJS with less faff"
         </h1>
 
         <div class="col-md-8 col-md-offset-2">
-          <h2 class="text-center">
+          <h2 class="text-center nav-border">
             Get rid of the boilerplate and build highly testable NodeJS applications fast
           </h2>
-
-        </div>
-
-      </div>
-
-      <div class="col-md-8 col-md-offset-2">
-
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs nav-tabs-dark nav-border" role="tablist">
-
-          {% for tab in site.data.exampleTabs %}
-
-          {% if forloop.first %}
-            {% assign activeClass = 'active' %}
-          {% else %}
-            {% assign activeClass = '' %}
-          {% endif %}
-
-          <li role="presentation" class="{{ activeClass }} small">
-
-            <a
-              href="#example-tab-{{ forloop.index }}"
-              aria-controls="example-tab-{{ forloop.index }}"
-              role="tab"
-              data-toggle="tab">
-              {{ tab.name }}
-            </a>
-
-          </li>
-
-          {% endfor %}
-
-        </ul>
-
-        <!-- Tab panes -->
-        <div class="tab-content">
-
-          {% for tab in site.data.exampleTabs %}
-
-            {% if forloop.first %}
-              {% assign activeClass = 'active' %}
-            {% else %}
-              {% assign activeClass = '' %}
-            {% endif %}
-
-            <div role="tabpanel" class="nav-border tab-pane {{ activeClass }}" id="example-tab-{{ forloop.index }}">
-              <pre class="no-padding"><code class="{{ tab.language }}">{{ tab.example | escape }}</code></pre>
-            </div>
-
-          {% endfor %}
 
         </div>
 
@@ -78,7 +28,7 @@ title: "NodeJS with less faff"
       <div class="col-sm-4 col-sm-offset-4 col-xs-12">
         <a
           class="btn btn-success btn-block btn-lg"
-          href="{{ '/quick-start' | preprend:site.baseurl }}">
+          href="{{ '/getting-started' | preprend:site.baseurl }}">
           Quick Start
         </a>
       </div>
