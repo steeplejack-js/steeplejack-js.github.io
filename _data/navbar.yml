@@ -4,6 +4,6 @@
     - name: Installation
       url: ''
     - name: Your First App
-      url: 'your-first-app'
+      url: your-first-app
 - url: /docs/
   title: Documentation

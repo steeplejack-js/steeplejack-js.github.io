@@ -12,6 +12,10 @@
         top: $navbar-margin-bottom;
       }
 
+      pre.highlight {
+        @extend .no-padding;
+      }
+
     }
 
   }

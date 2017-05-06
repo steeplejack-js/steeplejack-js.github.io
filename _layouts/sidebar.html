@@ -2,27 +2,32 @@
 layout: default
 ---
 
+{% for node in site.data.navbar %}
+  {% if page.url == node.url or page.nav == node.url %}
+    {% assign currentPage = node %}
+  {% endif %}
+{% endfor %}
+
 {% include navbar.html %}
 
 <div class="site-content">
   <div class="container">
     <div class="col-md-3">
       <ul class="nav nav-pills nav-stacked">
-        {% for node in site.data.navbar %}
+        {% for item in currentPage.child %}
 
-          {% if page.url == node.url or page.nav == node.url %}
+          {% assign menuUrl = item.url | prepend: currentPage.url | prepend: site.baseurl %}
+          {% assign activeClass = '' %}
 
-            {% for item in node.child %}
-
-              <li>
-                <a href="{{ item.url | prepend: node.url | prepend: site.baseurl }}">
-                  {{ item.name }}
-                </a>
-              </li>
-
-            {% endfor %}
-
+          {% if menuUrl == page.url %}
+            {% assign activeClass = 'active' %}
           {% endif %}
+
+          <li class="{{ activeClass }}">
+            <a href="{{ menuUrl }}">
+              {{ item.name }}
+            </a>
+          </li>
 
         {% endfor %}
       </ul>
@@ -44,7 +49,7 @@ layout: default
               <a
                 role="button"
                 class="btn btn-danger"
-                href="{{ page.prev.url | prepend: node.url | prepend: site.baseurl }}">
+                href="{{ page.prev.url | prepend: currentPage.url | prepend: site.baseurl }}">
                 <i class="fa fa-arrow-left"></i> {{ page.prev.name }}
               </a>
             {% endif %}
@@ -53,7 +58,7 @@ layout: default
               <a
                 role="button"
                 class="btn btn-success"
-                href="{{ page.next.url | prepend: node.url | prepend: site.baseurl }}">
+                href="{{ page.next.url | prepend: currentPage.url | prepend: site.baseurl }}">
                   {{ page.next.name }}
                   <i class="fa fa-arrow-right"></i>
               </a>

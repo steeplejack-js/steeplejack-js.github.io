@@ -9,8 +9,10 @@
 
     background: {
       color: $color-black;
-      //image: url("../img/jumbotron/bull-ring.jpg");
-      position: bottom;
+      image: url("../img/jumbotron/paint.jpg");
+      position: center;
+      //image: url("../img/jumbotron/brushes.jpg");
+      //position: bottom;
       repeat: no-repeat;
       size: cover;
     }
@@ -20,7 +22,7 @@
 
     .lead {
       background: {
-        color: rgba($color-black, 0.75);
+        color: rgba($color-black, 0.66);
       }
 
       color: $color-white;
