@@ -157,3 +157,45 @@ title: "NodeJS with less faff"
   </div>
 
 </section>
+
+<section>
+
+  <div class="container features-wrapper">
+
+    {% for feature in site.data.features %}
+
+      <div class="row">
+
+        <div class="col-md-6 lead">
+
+          <h1>
+            {{ feature.title }}
+          </h1>
+
+          <div class="description">
+            {{ feature.description | markdownify }}
+          </div>
+
+        </div>
+
+        {% for code in feature.code %}
+          <div class="code-example col-md-6">
+            {% if code.name %}
+              <h4>
+                {{ code.name }}
+              </h4>
+            {% endif %}
+
+            <pre class="no-padding"><code class="{{ code.lang }}">{{ code.code | escape }}</code></pre>
+          </div>
+        {% endfor %}
+
+      </div>
+
+      <hr />
+
+    {% endfor %}
+
+  </div>
+
+</section>

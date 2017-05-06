@@ -1,0 +1,179 @@
+- title: Easier config
+  description: |
+    Your application's config becomes a whole lot easier. Create your config file with default values in so development
+    starts easily and configure environment variables so you can deploy anywhere. And typecasting of the envvars means
+    you don't have to worry about what's in your config.
+  code:
+    - lang: json
+      name: config.json
+      code: |
+        {
+          "server": {
+            "port": 3000
+          }
+        }
+    - lang: json
+      name: envvars.json
+      code: |
+        {
+          "server": {
+            "port": "MY_SERVER_PORT"
+          }
+        }
+
+- title: Dependency injection FTW!
+  description: |
+    Dependency injection is a great way of loosely coupling your application. Steeplejack automatically loads and
+    registers all files and sorts out the correct dependencies at run-time. All you need to do is name your module,
+    set your dependencies and you're away.
+  code:
+    - lang: javascript
+      code: |
+        exports.default = (Server, config, { Express }) => {
+          const express = new Express();
+
+          return new Server(config.server, express);
+        };
+
+        exports.inject = {
+          name: 'server',
+          deps: [
+            'steeplejack-server',
+            '$config',
+            'Express'
+          ]
+        };
+
+- title: Routing made simple
+  description: |
+    Simple is always better and what's simpler than having route files describe the URL they're defining?
+
+    Callback hell is a thing of the past because all the route endpoints resolve a promise. And, if you really need a
+    callback, passing three arguments into your route endpoint will get you what you want.
+  code:
+    - lang: javascript
+      name: hello.js
+      code: |
+        exports.http = () => {
+            return {
+                '/': {
+                    '/:name': {
+                        get: [
+                          (req, res, cb) => {
+                            console.log('this is a callback');
+
+                            cb(null);
+                          },
+                          req => {
+                            console.log('this resolves as a promise');
+
+                            let name = req.params.name;
+
+                            if (!name) { name = 'world'; }
+
+                            return `hello ${name}`;
+                          }
+                        ]
+                    }
+                }
+            };
+        };
+
+        exports.inject = {
+            route: {
+                export: 'http'
+            }
+        };
+
+- title: Model your data
+  description: |
+    Free your data models from your data store! Data is not always stored in a database or you might want to store
+    different pieces of data in different ways. By passing models around the application, you can add certainty to your
+    work.
+
+    The models have loads of built-in features, including:
+     - Getters and setters
+     - Type casting
+     - Validation, including custom rules
+     - Key name mapping
+     - Partial matching
+  code:
+    - lang: javascript
+      code: |
+        exports.default = Model => {
+          return class User extends Model {
+
+            _schema () {
+              return {
+                id: {
+                  type: 'integer'
+                },
+                name: {
+                  type: 'string',
+                  validation: [{
+                    rule: 'required'
+                  }]
+                },
+                username: {
+                  type: 'string',
+                  validation: [{
+                    rule: 'required'
+                  }, {
+                    rule: 'regex',
+                    param: [
+                      /^([A-Z0-9]{1,20})$/i
+                    ]
+                  }, {
+                    rule: username => username !== 'invalid-username'
+                  }]
+                },
+                emailAddress: {
+                  type: 'string',
+                  column: 'email_address',
+                  validation: [{
+                    rule: 'required'
+                  }, {
+                    rule: 'email'
+                  }]
+                }
+              };
+            }
+
+          }
+        };
+
+        exports.inject = {
+          name: 'UserModel',
+          deps: [
+            'steeplejack-model'
+          ]
+        };
+
+- title: Gotta collect them all
+  description: |
+    When you want to work with multiple models, the collection is your friend. Think of this an array with extra power.
+
+    The collections have loads of built-in features, including:
+     - Validation
+     - Sorting
+     - Many flavours of searching for specific model(s)
+  code:
+    - lang: javascript
+      code: |
+        exports.default = (Collection, UserModel) => {
+          return class Users extends Collection {
+
+            _model () {
+              return UserModel;
+            }
+
+          }
+        };
+
+        exports.inject = {
+          name: 'UsersCollection',
+          deps: [
+            'steeplejack-collection',
+            'UserModel'
+          ]
+        };
