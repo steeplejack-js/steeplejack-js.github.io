@@ -93,7 +93,7 @@
 
     The models have loads of built-in features, including:
      - Getters and setters
-     - Type casting
+     - Enforcing data types
      - Validation, including custom rules
      - Key name mapping
      - Partial matching
@@ -117,14 +117,18 @@
                 username: {
                   type: 'string',
                   validation: [{
+                    // A pre-defined rule, with no args
                     rule: 'required'
                   }, {
+                    // A pre-defined rule, with args
                     rule: 'regex',
                     param: [
                       /^([A-Z0-9]{1,20})$/i
                     ]
                   }, {
-                    rule: username => username !== 'invalid-username'
+                    // A custom rule
+                    rule: username =>
+                      username !== 'invalid-username'
                   }]
                 },
                 emailAddress: {
