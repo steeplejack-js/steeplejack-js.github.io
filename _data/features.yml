@@ -55,28 +55,28 @@
       name: hello.js
       code: |
         exports.http = () => {
-            return {
-                '/': {
-                    '/:name': {
-                        get: [
-                          (req, res, cb) => {
-                            console.log('this is a callback');
+          return {
+            '/': {
+              '/:name': {
+                get: [
+                  (req, res, cb) => {
+                    console.log('this is a callback');
 
-                            cb(null);
-                          },
-                          req => {
-                            console.log('this resolves as a promise');
+                    cb(null);
+                  },
+                  req => {
+                    console.log('this resolves as a promise');
 
-                            let name = req.params.name;
+                    let name = req.params.name;
 
-                            if (!name) { name = 'world'; }
+                    if (!name) { name = 'world'; }
 
-                            return `hello ${name}`;
-                          }
-                        ]
-                    }
-                }
-            };
+                    return `hello ${name}`;
+                  }
+                ]
+              }
+            }
+          };
         };
 
         exports.inject = {
