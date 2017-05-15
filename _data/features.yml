@@ -1,8 +1,8 @@
 - title: Easier config
   description: |
-    Your application's config becomes a whole lot easier. Create your config file with default values in so development
-    starts easily and configure environment variables so you can deploy anywhere. And typecasting of the envvars means
-    you don't have to worry about what's in your config.
+    Simplify your application's config. Create a config file with the development values in so everyone can start work
+    immediately and configure environment variables so you can deploy anywhere. And typecasting of the environment
+    variables means you don't have to worry about what's in your config.
   code:
     - lang: json
       name: config.json
