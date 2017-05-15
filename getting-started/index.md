@@ -14,6 +14,6 @@ Create a new directory called `myapp`. In that directory, you’ll need to run t
   you. This example assumes that your main file is `app.js`.
  - Install the steeplejack dependencies:
     - `npm install steeplejack --save`
-    - `npm install steeplejack-restify --save` - this example uses the [Restify](http://restify.com) HTTP strategy
+    - `npm install @steeplejack/restify --save` - this example uses the [Restify](http://restify.com) HTTP strategy
 
 Now we have Steeplejack installed, let’s now look at creating your first app.
