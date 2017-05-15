@@ -46,7 +46,8 @@
 
 - title: Routing made simple
   description: |
-    Simple is always better and what's simpler than having route files describe the URL they're defining?
+    Simple is always better and what's simpler than having route files describe the URL they're defining? If you want to
+    create an endpoint at `/hello/world`, create a route file at `/hello/world.js`.
 
     Callback hell is a thing of the past because all the route endpoints resolve as a promise. And, if you really need a
     callback, passing three arguments into your route endpoint will get you what you want.
@@ -78,6 +79,17 @@
             }
           };
         };
+
+        exports.socket = () => ({
+          /* Listen for events on 'send' */
+          send: (socket) => {
+            /* Broadcast data to 'receive' */
+            socket.broadcast({
+              event: 'receive',
+              data: socket.params,
+            });
+          },
+        });
 
         exports.inject = {
             route: {
