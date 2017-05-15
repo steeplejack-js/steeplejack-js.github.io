@@ -5,6 +5,9 @@ permalink: /getting-started/your-first-app
 nav: /getting-started/
 prev:
   name: Installation
+next:
+  name: Your First App
+  url: your-first-app
 ---
 
 > Steeplejack allows you to write in any language that compiles to JavaScript.
@@ -19,9 +22,53 @@ Let's create a simple RESTful application using [Restify](http://restify.com). C
 
 ```json
 {
-    "server": {
-        "name": "steeplejack-example",
-        "port": 3000
-    }
+  "server": {
+    "name": "steeplejack-example",
+    "port": 3000
+  }
+}
+```
+
+### /src/app.js
+
+```javascript
+/* Import your dependencies */
+const Steeplejack = require('steeplejack');
+const restify = require('@steeplejack/restify');
+
+const config = require('./config.json');
+
+/* Bootstrap the Steeplejack app */
+const app = Steeplejack.app({
+  config,
+  modules: [
+    restify
+  ],
+  routesDir: `${__dirname}/routes`
+});
+
+/* Load up the server */
+app.run([
+  '$config',
+  'steeplejack-server',
+  'steeplejack-restify'
+], (config, Server, { Restify }) => {
+    /* Create Restify strategy */
+    const restify = new Restify();
+    
+    /* Create instance of Server with config loaded */
+    return new Server(config.server, restify);
+});
+
+exports.default = app;
+```
+
+Start up the server with `node src/app` and go to [localhost:3000](http://localhost:3000). If it's running correctly,
+you ought to see a running server, with a 404 header:
+
+```json
+{
+  "code": "ResourceNotFound",
+  "message": "/ does not exist"
 }
 ```
