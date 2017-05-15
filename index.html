@@ -86,10 +86,10 @@ title: "NodeJS. With less mess"
 
       {% for framework in site.data.frameworks %}
 
-        <div class="col-md-{{ 12 | divided_by: forloop.length }}">
+        <div class="col-md-{{ 12 | divided_by: forloop.length }} framework-wrapper">
 
           <img
-            class="img-responsive img-rounded media-object"
+            class="img-responsive img-rounded media-object{% if framework.display %} add_display_name{% endif %}"
             src="{{ '/assets/img/frameworks/' | append:framework.logo | prepend:site.baseurl }}"
             alt="{{ framework.name }}" />
 

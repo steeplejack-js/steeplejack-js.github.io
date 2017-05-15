@@ -18,12 +18,31 @@
 
   .frameworks-wrapper {
 
+    .framework-wrapper {
+      @extend .text-center;
+
+      margin: {
+        top: $grid-gutter-width;
+        bottom: $grid-gutter-width;
+      }
+    }
+
     img {
       display: inline-block;
       height: 64px;
+      margin: {
+        top: -5px;
+      }
+
+      &.add_display_name {
+        margin: {
+          top: -($grid-gutter-width / 2);
+        }
+      }
     }
 
     .display_name {
+      display: inline-block;
       font: {
         size: 2.5em;
         weight: 500;
