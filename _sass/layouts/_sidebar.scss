@@ -18,6 +18,14 @@
 
     }
 
+    .action-buttons {
+      @extend .text-center;
+
+      margin: {
+        top: $grid-gutter-width;
+      }
+    }
+
   }
 
 }

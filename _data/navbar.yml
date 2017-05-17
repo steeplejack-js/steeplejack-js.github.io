@@ -5,5 +5,9 @@
       url: ''
     - name: Your First App
       url: your-first-app
+    - name: Routing
+      url: routing
+    - name: Modules
+      url: modules
 - url: /docs/
   title: Documentation

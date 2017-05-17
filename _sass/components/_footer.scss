@@ -4,6 +4,9 @@
     color: $gray-base;
   }
   color: #fff;
+  margin: {
+    top: $grid-gutter-width;
+  }
   padding: {
     top: $grid-gutter-width;
     bottom: $grid-gutter-width;

@@ -12,25 +12,27 @@ layout: default
 
 <div class="site-content">
   <div class="container">
-    <div class="col-md-3">
-      <ul class="nav nav-pills nav-stacked">
-        {% for item in currentPage.child %}
+    <div class="col-md-3 sidebar-wrapper">
+      <div id="sidebar">
+        <ul class="nav nav-pills nav-stacked">
+          {% for item in currentPage.child %}
 
-          {% assign menuUrl = item.url | prepend: currentPage.url | prepend: site.baseurl %}
-          {% assign activeClass = '' %}
+            {% assign menuUrl = item.url | prepend: currentPage.url | prepend: site.baseurl %}
+            {% assign activeClass = '' %}
 
-          {% if menuUrl == page.url %}
-            {% assign activeClass = 'active' %}
-          {% endif %}
+            {% if menuUrl == page.url %}
+              {% assign activeClass = 'active' %}
+            {% endif %}
 
-          <li class="{{ activeClass }}">
-            <a href="{{ menuUrl }}">
-              {{ item.name }}
-            </a>
-          </li>
+            <li class="{{ activeClass }}">
+              <a href="{{ menuUrl }}">
+                {{ item.name }}
+              </a>
+            </li>
 
-        {% endfor %}
-      </ul>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
 
     <div class="col-md-9">
@@ -42,7 +44,7 @@ layout: default
         {{ content }}
       </div>
 
-      <div class="text-center">
+      <div class="action-buttons">
         {% if page.next or page.prev %}
           <div class="btn-group" role="group">
             {% if page.prev %}

@@ -6,8 +6,8 @@ nav: /getting-started/
 prev:
   name: Installation
 next:
-  name: Your First App
-  url: your-first-app
+  name: Routing
+  url: routing
 ---
 
 > Steeplejack allows you to write in any language that compiles to JavaScript.
@@ -42,12 +42,13 @@ const config = require('./config.json');
 const app = Steeplejack.app({
   config,
   modules: [
+    `${__dirname}/!(node_modules|routes)/**/*.js`,
     restify
   ],
   routesDir: `${__dirname}/routes`
 });
 
-/* Load up the server */
+/* Load up the server with dependencies */
 app.run([
   '$config',
   'steeplejack-server',
@@ -72,3 +73,9 @@ you ought to see a running server, with a 404 header:
   "message": "/ does not exist"
 }
 ```
+
+### A word on `modules`
+
+In the `Steeplejack.app` factory, there is a modules array. This is where you tell Steeplejack where to look for files
+to automatically load into the dependency injector. It can accept [globbed](https://en.wikipedia.org/wiki/Glob_(programming))
+paths as well [Plugins](/docs/plugins).
