@@ -1,17 +1,11 @@
-@import "config/colors";
+@import "base/variables";
 
 @import "third-party/bootstrap";
-@import "third-party/font-awesome";
-@import "third-party/highlightjs";
+
+@import "base/theme";
 
 @import "layouts/common";
 @import "layouts/home";
-@import "layouts/sidebar";
 
-@import "components/code";
-@import "components/footer";
-@import "components/fork-me";
-@import "components/img";
-@import "components/jumbotron";
-@import "components/nav";
-@import "components/panel";
+@import "components/buttons";
+

@@ -1,12 +1,14 @@
 title: ":: Steeplejack"
 email: your-email@domain.com
 description: >
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  NodeJS. With less mess. Get rid of the boilerplate and build
+  highly testable NodeJS applications fast.
+default_img: https://getsteeplejack.com/some/img.png
 baseurl: ""
 url: ""
-github_username:  steeplejack-js
+github_fork_url: https://github.com/steeplejack-js/steeplejack
+github_url: https://github.com/steeplejack-js/steeplejack-js.github.io
+twitter: riggerthegeek
 
 # Build settings
 markdown: kramdown

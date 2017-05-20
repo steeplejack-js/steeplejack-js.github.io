@@ -1,0 +1,35 @@
+.layout.layout--home {
+
+  header {
+
+    background: {
+      color: $gray-base;
+      image: url('/assets/img/jumbotron/paint.jpg');
+      position: top;
+      repeat: no-repeat;
+      size: cover;
+    }
+
+    .navbar {
+      //display: none;
+    }
+
+    .jumbotron {
+      @extend .col-xs-12;
+
+      background: none;
+
+      .container {
+        background: {
+          color: rgba($gray-base, 0.66);
+        }
+        color: #fff;
+        border: {
+          radius: $border-radius-large;
+        }
+      }
+    }
+
+  }
+
+}

@@ -11,13 +11,13 @@
     <meta property="og:url" content="{{ site.url }}" />
     <meta property="og:title" content="{{ page.title }} {{ site.title}}" />
     <meta property="og:description" content="{{ site.description | strip_newlines }}" />
-    <meta property="og:image" content="https://browserspy.io/assets/img/brand/icon-in-circle.8144a450.png" />
+    <meta property="og:image" content="{% if page.og_img %}{{ page.og_img }}{% else %}{{ site.default_img }}{% endif %}" />
 
-    <meta property="twitter:site" content="@riggerthegeek" />
+    <meta property="twitter:site" content="@{{ site.twitter }}" />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="{{ page.title }} {{ site.title }}" />
     <meta property="twitter:description" content="{{ site.description | strip_newlines }}" />
-    <meta property="twitter:image:src" content="https://browserspy.io/assets/img/brand/icon-in-circle.8144a450.png" />
+    <meta property="twitter:image:src" content="{% if page.og_img %}{{ page.og_img }}{% else %}{{ site.default_img }}{% endif %}" />
 
     <title>
       {{ page.title }} {{ site.title}}
@@ -29,17 +29,12 @@
 
   <body class="site">
 
-    <div class="fork-me">
-      {% include fork-me.html %}
-    </div>
-
     <div class="layout layout--{{ page.layout }}">
       {{ content }}
     </div>
 
-    <script src="{{ '/assets/js/jquery-2.2.4.min.js' | prepend:site.baseurl }}"></script>
-    <script src="{{ '/assets/bootstrap/javascripts/bootstrap.min.js' | prepend:site.baseurl }}"></script>
-    <script src="{{ '/assets/js/highlight-9.11.0.min.js' | prepend:site.baseurl }}"></script>
+    <script src="{{ '/node_modules/jquery/dist/jquery.min.js' | prepend:site.baseurl }}"></script>
+    <script src="{{ '/node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js' | prepend:site.baseurl }}"></script>
     <script src="{{ '/assets/js/app.js' | prepend:site.baseurl }}"></script>
 
   </body>

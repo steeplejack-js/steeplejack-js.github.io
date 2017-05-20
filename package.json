@@ -1,0 +1,23 @@
+{
+  "name": "steeplejack-js.github.io",
+  "version": "1.0.0",
+  "description": "Website for Steeplejack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steeplejack-js/steeplejack-js.github.io.git"
+  },
+  "author": "Simon Emms <simon@simonemms.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/steeplejack-js/steeplejack-js.github.io/issues"
+  },
+  "homepage": "https://github.com/steeplejack-js/steeplejack-js.github.io#readme",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
+}

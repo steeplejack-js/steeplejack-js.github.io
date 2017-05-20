@@ -1,0 +1,23 @@
+.btn {
+
+  &.btn-jumbotron {
+    @include button-variant(#000, #fff, #fff);
+
+    font: {
+      weight: 600;
+    }
+
+    &:hover {
+
+      background: {
+        color: $brand-danger;
+      }
+      border: {
+        color: $brand-danger;
+      }
+      color: #fff;
+
+    }
+  }
+
+}

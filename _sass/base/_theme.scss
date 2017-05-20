@@ -1,0 +1,35 @@
+.navbar {
+
+  &.navbar-inverse {
+
+    padding: {
+      top: $navbar-margin-bottom;
+    }
+
+    font: {
+      weight: $headings-font-weight;
+    }
+
+    .nav {
+
+      &.navbar-nav {
+
+        li {
+          a {
+            border: {
+              radius: 50px;
+            }
+            padding: {
+              top: 10px;
+              bottom: 10px;
+            }
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+}

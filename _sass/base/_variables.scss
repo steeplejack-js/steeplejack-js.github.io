@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,500,500i');
+
+$font-family-sans-serif: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Navbar
+$navbar-inverse-color: #fff;
+$navbar-inverse-bg: transparent;
+$navbar-inverse-border: transparent;
+
+$navbar-inverse-link-color: #fff;
+$navbar-inverse-link-hover-bg: #fff;
+$navbar-inverse-link-hover-color: #020202;
+$navbar-inverse-link-active-bg: $navbar-inverse-color;
+$navbar-inverse-link-active-color: #020202;

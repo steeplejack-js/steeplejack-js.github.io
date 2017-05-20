@@ -2,151 +2,25 @@
 layout: home
 title: "NodeJS. With less mess"
 ---
-<section class="jumbotron jumbotron--home-page">
-
-  <div class="container">
-
-    <div class="row">
-
-      <div class="lead">
-
-        <h1 class="text-center">
-          <strong class="text-primary">
-            NodeJS. With less mess
-          </strong>
-        </h1>
-
-        <div class="col-md-8 col-md-offset-2">
-          <h2 class="text-center nav-border">
-            Get rid of the boilerplate and build highly testable NodeJS applications fast
-          </h2>
-        </div>
-
-        <div class="col-sm-4 col-sm-offset-4 col-xs-12">
-          <a
-            class="btn btn-info btn-block btn-lg"
-            href="{{ '/getting-started' | preprend:site.baseurl }}">
-            Quick Start
-            <i class="fa fa-arrow-right fa-lg"></i>
-          </a>
-        </div>
-
-        <div class="clearfix"></div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="container">
-
-  <div class="row">
-
-    <h1 class="text-center">
-      Wouldn't NodeJS be nice without the boilerplate?
-    </h1>
-
-    {% for panel in site.data.homePanels %}
-
-      <div class="col-md-{{ 12 | divided_by: forloop.length }}">
-
-        <div class="panel panel-none">
-
-          <div class="panel-body">
-            <h3 class="text-center">
-              {{ panel.name }}
-            </h3>
-
-            <div>
-              {{ panel.description }}
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    {% endfor %}
-
-  </div>
-
-</section>
-
-<section class="white-bg">
-
-  <div class="container frameworks-wrapper">
-
-    <div class="row">
-
-      <h1 class="text-center">
-        Built on the best known frameworks
-      </h1>
-
-      {% for framework in site.data.frameworks %}
-
-        <div class="col-md-{{ 12 | divided_by: forloop.length }} framework-wrapper">
-
-          <img
-            class="img-responsive img-rounded media-object{% if framework.display %} add_display_name{% endif %}"
-            src="{{ '/assets/img/frameworks/' | append:framework.logo | prepend:site.baseurl }}"
-            alt="{{ framework.name }}" />
-
-          {% if framework.display %}
-            <span class="display_name">
-              {{ framework.display }}
-            </span>
-          {% endif %}
-
-        </div>
-
-      {% endfor %}
-
-    </div>
-
-  </div>
-
-</section>
-
 <section>
 
-  <div class="container features-wrapper">
+  <div class="jumbotron">
 
-    {% for feature in site.data.features %}
+    <div class="container">
+      <h1>
+        Hello world
+      </h1>
 
-      <div class="row">
+      <p>
+        Some nonsense
+      </p>
 
-        <div class="col-md-6 lead">
-
-          <h1>
-            {{ feature.title }}
-          </h1>
-
-          <div class="description">
-            {{ feature.description | markdownify }}
-          </div>
-
-        </div>
-
-        {% for code in feature.code %}
-          <div class="code-example col-md-6">
-            {% if code.name %}
-              <h4>
-                {{ code.name }}
-              </h4>
-            {% endif %}
-
-            <pre class="no-padding"><code class="{{ code.lang }}">{{ code.code | escape }}</code></pre>
-          </div>
-        {% endfor %}
-
-      </div>
-
-      <hr />
-
-    {% endfor %}
+      <p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">
+          Getting Started
+        </a>
+      </p>
+    </div>
 
   </div>
 

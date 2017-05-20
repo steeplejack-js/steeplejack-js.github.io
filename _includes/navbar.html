@@ -1,51 +1,34 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
 
-  <div class="container">
+  <div class="navbar-header">
 
-    <div class="navbar-header">
+    <button
+      type="button"
+      class="navbar-toggle collapsed"
+      data-toggle="collapse"
+      data-target="#steeplejack-navbar-collapse" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
 
-      <button
-        type="button"
-        class="navbar-toggle collapsed"
-        data-toggle="collapse"
-        data-target="#navbar-collapse"
-        aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-      <a
-        class="navbar-brand"
-        href="{{ '/' | preprend:site.baseurl }}">
-        Steeplejack
-      </a>
-
-    </div>
-
-    <div class="collapse navbar-collapse" id="navbar-collapse">
-
-      <ul class="nav navbar-nav">
-
-        {% for node in site.data.navbar %}
-          {% assign activeClass = '' %}
-
-          {% if page.url == node.url or page.nav == node.url %}
-            {% assign activeClass = 'active' %}
-          {% endif %}
-
-          <li class="{{ activeClass }}">
-            <a href="{{ node.url | preprend:site.baseurl }}">
-              {{ node.title }}
-            </a>
-          </li>
-        {% endfor %}
-
-      </ul>
-
-    </div>
+    <a class="navbar-brand" href="#">
+      Steeplejack
+    </a>
 
   </div>
 
-</nav>
+  <div class="collapse navbar-collapse" id="steeplejack-navbar-collapse">
+
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#">
+          Link
+        </a>
+      </li>
+    </ul>
+
+  </div>
+
+</div>
