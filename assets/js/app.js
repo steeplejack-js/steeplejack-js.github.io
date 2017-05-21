@@ -8,7 +8,8 @@
 
 /* Files */
 
-
 (function () {
+
+  hljs.initHighlightingOnLoad();
 
 })();

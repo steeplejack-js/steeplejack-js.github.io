@@ -26,11 +26,48 @@ layout: default
         </p>
 
         <p>
-          <a class="btn btn-jumbotron btn-lg" href="#" role="button">
+          <a
+            class="btn btn-jumbotron btn-lg"
+            href="{{ '/getting-started' | prepend:site.baseurl }}"
+            role="button">
             Quick start
             <i class="glyphicon glyphicon-arrow-right"></i>
           </a>
         </p>
+
+        <div class="social_buttons">
+
+          <div class="inline-pad">
+              <a
+                href="https://twitter.com/share"
+                class="twitter-share-button"
+                data-show-count="true">
+                Tweet
+              </a>
+          </div>
+
+          <div
+            style="display:inline"
+            class="fb-like"
+            data-href="https://getsteeplejack.com"
+            data-layout="button_count"
+            data-colorscheme="dark"
+            data-action="like"
+            data-size="small"
+            data-share="false">
+          </div>
+
+          <div class="inline-pad">
+            <a
+              class="github-button"
+              href="https://github.com/steeplejack-js/steeplejack"
+              data-show-count="true"
+              aria-label="Star steeplejack-js/steeplejack on GitHub">
+              Star
+            </a>
+          </div>
+
+        </div>
 
       </div>
 
@@ -42,40 +79,6 @@ layout: default
 
 </header>
 
-<section class="what-is-steeplejack">
+{{ content }}
 
-  <div class="container lead">
-
-    <h2>
-      What is Steeplejack?
-    </h2>
-
-    <ul>
-      <li>
-        Steeplejack is an opinionated way of scaffolding your NodeJS applications. It's great for building
-        microservices, writing reusable software and makes 100% test coverage really easy.
-      </li>
-
-      <li>
-        Instead of repeatedly writing the same things over and over again, use conventions. Routing, data manipulation
-        and logging become easy and enjoyable.
-      </li>
-
-      <li>
-        Web sockets are first class citizens so you can make real time applications as easily as you can a RESTful or
-        full stack project.
-      </li>
-
-      <li>
-        A simple and reliable dependency injection system allows you to write intelligent unit tests that can
-        interrogate what happens.
-      </li>
-
-      <li>
-        Give it a go and fall in love with writing robust software again.
-      </li>
-    </ul>
-
-  </div>
-
-</section>
+{% include footer.html %}

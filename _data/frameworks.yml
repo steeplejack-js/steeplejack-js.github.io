@@ -1,9 +1,11 @@
 - name: Express
   logo: express.png
+  class: express
 
 - name: Restify
-  display: Restify
   logo: restify.png
+  class: restify
 
 - name: SocketIO
   logo: socketio.svg
+  class: socketio

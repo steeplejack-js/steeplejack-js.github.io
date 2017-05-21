@@ -1,5 +1,57 @@
 .layout.layout--home {
 
+  h2 {
+    margin: {
+      top: $grid-gutter-width;
+      bottom: $grid-gutter-width;
+    }
+  }
+
+  .what-is-steeplejack {
+
+    h2 {
+      color: $brand-info;
+    }
+
+  }
+
+  .frameworks {
+
+    background: {
+      color: $brand-info;
+    }
+
+    .framework-wrapper {
+
+      @extend .text-center;
+
+      margin: {
+        top: $grid-gutter-width;
+        bottom: $grid-gutter-width;
+      }
+
+      &.framework--socketio {
+        img {
+          padding: $grid-gutter-width;
+        }
+      }
+
+      img {
+        margin: 0 auto;
+        background: {
+          color: #fff;
+        }
+        max-height: 100px;
+      }
+
+    }
+
+  }
+
+  .features {
+
+  }
+
   header {
 
     background: {
@@ -10,8 +62,11 @@
       size: cover;
     }
 
-    .navbar {
-      //display: none;
+    .social_buttons {
+      margin: {
+        top: $grid-gutter-width;
+        bottom: $grid-gutter-width;
+      }
     }
 
     .jumbotron {
@@ -28,6 +83,21 @@
           radius: $border-radius-large;
         }
       }
+    }
+
+  }
+
+  .lead {
+
+    ul {
+
+      li {
+        padding: {
+          top: $grid-gutter-width / 2;
+          bottom: $grid-gutter-width / 2;
+        }
+      }
+
     }
 
   }

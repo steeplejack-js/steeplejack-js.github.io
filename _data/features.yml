@@ -5,7 +5,7 @@
     variables means you don't have to worry about what's in your config.
   code:
     - lang: json
-      name: config.json
+      name: /config.json
       code: |
         {
           "server": {
@@ -13,7 +13,7 @@
           }
         }
     - lang: json
-      name: envvars.json
+      name: /envvars.json
       code: |
         {
           "server": {
@@ -53,29 +53,25 @@
     callback, passing three arguments into your route endpoint will get you what you want.
   code:
     - lang: javascript
-      name: hello.js
+      name: /routes/hello/world.js
       code: |
         exports.http = () => {
           return {
             '/': {
-              '/:name': {
-                get: [
-                  (req, res, cb) => {
-                    console.log('this is a callback');
+              get: [
+                (req, res, cb) => {
+                  console.log('this is a callback');
 
-                    cb(null);
-                  },
-                  req => {
-                    console.log('this resolves as a promise');
+                  cb(null);
+                },
+                (req, res) => {
+                  console.log('this resolves as a promise');
 
-                    let name = req.params.name;
-
-                    if (!name) { name = 'world'; }
-
-                    return `hello ${name}`;
-                  }
-                ]
-              }
+                  return {
+                    hello: 'world'
+                  };
+                }
+              ]
             }
           };
         };

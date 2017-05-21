@@ -2,24 +2,135 @@
 layout: home
 title: "NodeJS. With less mess"
 ---
-<section>
 
-  <div class="jumbotron">
+<section class="what-is-steeplejack">
 
-    <div class="container">
-      <h1>
-        Hello world
-      </h1>
+  <div class="container">
+
+    <div class="lead">
+
+      <h2 class="text-center">
+        What is Steeplejack?
+      </h2>
+
+      <ul>
+        <li>
+          Steeplejack is an opinionated way of scaffolding your NodeJS applications. It's great for building
+          microservices, writing reusable software and makes getting 100% test coverage really easy.
+        </li>
+
+        <li>
+          Instead of repeatedly writing the same things over and over again, use conventions. Routing, data manipulation
+          and logging become easy and enjoyable.
+        </li>
+
+        <li>
+          Web sockets are first class citizens so you can make real time applications as easily as you can a RESTful or
+          full stack project.
+        </li>
+
+        <li>
+          A simple and reliable dependency injection system will automatically load your files and help you write
+          intelligent unit tests that can interrogate what actually happens.
+        </li>
+
+        <li>
+          Give it a go and fall in love with writing clean and robust software again.
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="frameworks">
+
+  <div class="container">
+
+    <div class="lead">
+
+      <h2 class="text-center">
+        Extend your favourite frameworks
+      </h2>
 
       <p>
-        Some nonsense
+        At it's heart, Steeplejack relies upon the world's most popular frameworks.
       </p>
 
+      {% for framework in site.data.frameworks %}
+
+        <div class="col-md-{{ 12 | divided_by: forloop.length }} framework-wrapper framework--{{ framework.class }}">
+
+          <img
+            class="img-responsive img-rounded media-object"
+            src="{{ '/assets/img/frameworks/' | append:framework.logo | prepend:site.baseurl }}"
+            alt="{{ framework.name }}" />
+
+        </div>
+
+      {% endfor %}
+
+      <div class="clearfix"></div>
+
       <p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">
-          Getting Started
-        </a>
+        And if these don't work for you, you can write a strategy for your preferred framework.
       </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="features">
+
+  <div class="container">
+
+    <div class="lead">
+
+      <h2>
+        Steeplejack at a glance
+      </h2>
+
+      {% for feature in site.data.features %}
+
+        <div class="row">
+
+          <div class="col-md-6 lead">
+
+            <h1>
+              {{ feature.title }}
+            </h1>
+
+            <div class="description">
+              {{ feature.description | markdownify }}
+            </div>
+
+          </div>
+
+          {% for code in feature.code %}
+          <div class="code-example col-md-6">
+            {% if code.name %}
+              <h4>
+                <code>
+                  {{ code.name }}
+                </code>
+              </h4>
+            {% endif %}
+
+            <pre class="no-padding"><code class="{{ code.lang }}">{{ code.code | escape }}</code></pre>
+          </div>
+          {% endfor %}
+
+        </div>
+
+        <hr />
+
+      {% endfor %}
+
+
     </div>
 
   </div>

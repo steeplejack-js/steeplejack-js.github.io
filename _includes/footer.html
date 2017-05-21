@@ -2,19 +2,91 @@
 
   <div class="container">
 
+    <div class="lead">
+      Made with <i class="glyphicon glyphicon-heart"></i> by
+      <a href="http://simonemms.com" target="_blank">Simon Emms</a> and the
+      <a href="https://github.com/steeplejack-js/steeplejack/graphs/contributors" target="_blank">contributors</a>
+    </div>
+
     <div class="row">
 
-      <div class="col-md-3">
+      <div class="col-md-4">
 
-        <p>
-          Code licensed under <a
-            target="_blank"
-            href="https://github.com/steeplejack-js/steeplejack/blob/master/LICENSE">The MIT License</a>.
-        </p>
+        <ul class="list-unstyled">
 
-        <p>
-          &copy {{ site.time | date: '%Y' }} <a href="{{ site.author_link }}" target="_blank">{{ site.author }}</a>
-        </p>
+          <li>
+            Code licensed under <a
+              target="_blank"
+              href="https://github.com/steeplejack-js/steeplejack/blob/master/LICENSE">The MIT License</a>.
+          </li>
+
+          <li>
+            &copy 2014-{{ site.time | date: '%Y' }}
+            <a href="{{ site.author_link }}" target="_blank">{{ site.author }}</a>
+          </li>
+
+          <li>
+            <div class="social_buttons">
+
+              <div class="inline-pad">
+                <a
+                  href="https://twitter.com/share"
+                  class="twitter-share-button"
+                  data-show-count="true">
+                  Tweet
+                </a>
+              </div>
+
+              <div
+                style="display:inline"
+                class="fb-like"
+                data-href="https://getsteeplejack.com"
+                data-layout="button_count"
+                data-colorscheme="dark"
+                data-action="like"
+                data-size="small"
+                data-share="false">
+              </div>
+
+              <div class="inline-pad">
+                <a
+                  class="github-button"
+                  href="https://github.com/steeplejack-js/steeplejack"
+                  data-show-count="true"
+                  aria-label="Star steeplejack-js/steeplejack on GitHub">
+                  Star
+                </a>
+              </div>
+
+            </div>
+          </p>
+
+        </ul>
+
+      </div>
+
+      <div class="col-md-4 col-md-offset-4">
+
+        <ul class="list-unstyled">
+
+          <li>
+            <i class="fa fa-github fa-lg"></i>
+            Edit this page
+          </li>
+
+          <li>
+            <a href="https://gitter.im/steeplejack-js" target="_blank">
+              Chat on Gitter
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/steeplejack-js" target="_blank">
+              GitHub
+            </a>
+          </li>
+
+        </ul>
 
       </div>
 

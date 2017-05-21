@@ -1,0 +1,14 @@
+.footer-wrapper {
+
+  margin: {
+    top: -($grid-gutter-width / 1);
+  }
+  padding: {
+    top: $grid-gutter-width;
+    bottom: $grid-gutter-width;
+  }
+  background: {
+    color: $gray-lighter;
+  }
+
+}
