@@ -27,11 +27,15 @@
 
   </head>
 
-  <body class="site">
+  <body class="site" data-spy="scroll" data-target="#sidebar-child">
 
     <div id="fb-root"></div>
 
-    <div class="site layout layout--{{ page.layout }}">
+    {% assign url_split = page.url | split:'/' %}
+    {% assign url_name = url_split[1] %}
+    {% assign color = site.colors[url_name] %}
+
+    <div id="site-content" class="site layout layout--{{ page.layout }}{% if color %} color-{{ color }}{% endif %}">
       {{ content }}
     </div>
 

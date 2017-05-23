@@ -1,4 +1,64 @@
+@mixin navbar-color ($color) {
+  border: {
+    top-width: 5px;
+    top-color: $color;
+  }
+}
+
+.color-danger .navbar.navbar-default {
+  @include navbar-color($brand-danger);
+}
+
+.color-info .navbar.navbar-default {
+  @include navbar-color($brand-info);
+}
+
+.color-success .navbar.navbar-default {
+  @include navbar-color($brand-success);
+}
+
+.color-warning .navbar.navbar-default {
+  @include navbar-color($brand-warning);
+}
+
+
 .navbar {
+
+  .nav {
+
+    &.navbar-nav {
+
+      li {
+        padding: {
+          left: 10px;
+        }
+
+        a {
+          border: {
+            radius: 50px;
+          }
+          padding: {
+            top: 10px;
+            bottom: 10px;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  &.navbar-default {
+    @include navbar-color($brand-primary);
+
+    border: {
+      top-style: solid;
+    }
+    padding: {
+      top: 30px;
+      bottom: 30px;
+    }
+  }
 
   &.navbar-inverse {
 
@@ -11,27 +71,12 @@
     }
 
     .nav {
-
       &.navbar-nav {
 
-        li {
-          padding: {
-            left: 10px;
-          }
-
-          a {
-            border: {
-              radius: 50px;
-            }
-            padding: {
-              top: 10px;
-              bottom: 10px;
-            }
-          }
+        a {
         }
 
       }
-
     }
 
   }

@@ -3,6 +3,14 @@
 $font-family-sans-serif: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // Navbar
+$navbar-default-bg: #494d55;
+$navbar-default-color: #fff;
+$navbar-default-link-color: #fff;
+$navbar-default-link-active-color: #fff;
+$navbar-default-link-hover-color: #fff;
+$navbar-default-link-active-bg: darken($navbar-default-bg, 6.5%);
+$navbar-default-link-hover-bg: $navbar-default-link-active-bg;
+
 $navbar-inverse-color: #fff;
 $navbar-inverse-bg: transparent;
 $navbar-inverse-border: transparent;

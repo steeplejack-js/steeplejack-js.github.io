@@ -1,13 +1,6 @@
 - url: /getting-started/
   title: Getting Started
-  child:
-    - name: Installation
-      url: ''
-    - name: Your First App
-      url: your-first-app
-    - name: Routing
-      url: routing
-    - name: Modules
-      url: modules
-- url: /docs/
-  title: Documentation
+- url: /concepts/
+  title: Concepts
+- url: /api/
+  title: API

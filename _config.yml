@@ -22,3 +22,8 @@ author: Simon Emms
 author_link: http://simonemms.com
 
 empty_array: []
+
+colors:
+  api: warning
+  concepts: success
+  getting-started: danger

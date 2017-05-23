@@ -1,0 +1,30 @@
+.nav {
+
+  &.nav-sidebar {
+
+    .nav.nav-sidebar {
+      margin: {
+        left: $grid-gutter-width / 2;
+      }
+    }
+
+    > li {
+      > a {
+        &:hover,
+        &:focus {
+          background: none;
+        }
+      }
+
+      &.active {
+        > a {
+          font: {
+            weight: 600;
+          }
+        }
+      }
+    }
+
+  }
+
+}

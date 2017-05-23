@@ -23,7 +23,7 @@
 
     <ul class="nav navbar-nav navbar-right">
       {% for item in site.data.navbar %}
-        <li{% if page.url == item.url %} class="active"{% endif %}>
+        <li{% if page.url contains item.url %} class="active"{% endif %}>
           <a href="{{ item.url | prepend:site.baseurl }}">
             {{ item.title }}
           </a>

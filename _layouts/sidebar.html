@@ -22,79 +22,91 @@ layout: default
 {% assign prev_page = '' %}
 {% assign next_page = '' %}
 
-{% include navbar.html %}
+<nav class="navbar navbar-default navbar-static-top">
+  {% include navbar.html %}
+</nav>
 
 <div class="site-content">
   <div class="container">
-    <div class="col-md-3 sidebar-wrapper">
-      <div id="sidebar">
-        <ul class="nav nav-pills nav-stacked">
-          {% for pg in nav_pages %}
 
-            {% assign activeClass = '' %}
-            {% assign prev_id = '' %}
-            {% assign next_id = '' %}
+    <div class="row">
+      <div class="col-md-3 sidebar-wrapper">
+        <div id="sidebar" data-spy="affix">
+          <ul class="nav nav-sidebar nav-stacked">
+            {% for pg in nav_pages %}
 
-            {% if pg.url == page.url %}
-              {% assign activeClass = 'active' %}
-            {% endif %}
+              {% assign activeClass = '' %}
+              {% assign prev_id = '' %}
+              {% assign next_id = '' %}
 
-            {% if activeClass == 'active' and forloop.first == false %}
-              {% assign prev_id = forloop.index0 | minus:1 %}
-              {% assign prev_page = nav_pages[prev_id] %}
-            {% endif %}
+              {% if pg.url == page.url %}
+                {% assign activeClass = 'active' %}
+              {% endif %}
 
-            {% if activeClass == 'active' and forloop.last == false %}
-              {% assign next_id = forloop.index0 | plus:1 %}
-              {% assign next_page = nav_pages[next_id] %}
-            {% endif %}
+              {% if activeClass == 'active' and forloop.first == false %}
+                {% assign prev_id = forloop.index0 | minus:1 %}
+                {% assign prev_page = nav_pages[prev_id] %}
+              {% endif %}
 
-            <li class="{{ activeClass }}">
-              <a href="{{ pg.url }}">
-                {{ pg.title }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
+              {% if activeClass == 'active' and forloop.last == false %}
+                {% assign next_id = forloop.index0 | plus:1 %}
+                {% assign next_page = nav_pages[next_id] %}
+              {% endif %}
 
-    <div class="col-md-9">
-      <h1>
-        {{ page.title }}
-      </h1>
+              <li class="{{ activeClass }}">
+                <a href="{{ pg.url }}">
+                  {{ pg.title }}
+                </a>
 
-      <div>
-        {{ content }}
-      </div>
+                {% if activeClass != '' %}
+                  <div id="sidebar-child">
+                    <ul class="nav nav-sidebar nav-stacked"></ul>
+                  </div>
+                {% endif %}
 
-      <div class="action-buttons">
-        <!--{{ next_page | inspect }}-->
-        {% if prev_page or next_page %}
-          <div class="btn-group" role="group">
-            {% if prev_page != '' %}
-              <a
-                role="button"
-                class="btn btn-warning"
-                href="{{ prev_page.url | prepend: currentPage.url | prepend: site.baseurl }}">
-                <i class="fa fa-arrow-left"></i>
-                {{ prev_page.title }}
-              </a>
-            {% endif %}
-
-            {% if next_page != '' %}
-              <a
-                role="button"
-                class="btn btn-info"
-                href="{{ next_page.url | prepend: currentPage.url | prepend: site.baseurl }}">
-                  {{ next_page.title }}
-                  <i class="fa fa-arrow-right"></i>
-              </a>
-            {% endif %}
-          </div>
-        {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
 
+      <div class="col-md-9">
+        <h1>
+          {{ page.title }}
+        </h1>
+
+        <div>
+          {{ content }}
+        </div>
+
+        <div class="action-buttons">
+          <!--{{ next_page | inspect }}-->
+          {% if prev_page or next_page %}
+            <div class="btn-group" role="group">
+              {% if prev_page != '' %}
+                <a
+                  role="button"
+                  class="btn btn-warning"
+                  href="{{ prev_page.url | prepend: currentPage.url | prepend: site.baseurl }}">
+                  <i class="fa fa-arrow-left"></i>
+                  {{ prev_page.title }}
+                </a>
+              {% endif %}
+
+              {% if next_page != '' %}
+                <a
+                  role="button"
+                  class="btn btn-info"
+                  href="{{ next_page.url | prepend: currentPage.url | prepend: site.baseurl }}">
+                    {{ next_page.title }}
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
