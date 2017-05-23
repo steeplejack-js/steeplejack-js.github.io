@@ -1,8 +1,9 @@
 .footer-wrapper {
 
   margin: {
-    top: -($grid-gutter-width / 1);
+    top: $grid-gutter-width * 2;
   }
+
   padding: {
     top: $grid-gutter-width;
     bottom: $grid-gutter-width;

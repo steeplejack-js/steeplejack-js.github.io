@@ -56,7 +56,7 @@ title: "NodeJS. With less mess"
       </h2>
 
       <p>
-        At it's heart, Steeplejack relies upon the world's most popular frameworks.
+        Steeplejack is <strong>NOT</strong> a framework. It's a way of writing the world's most popular frameworks.
       </p>
 
       {% for framework in site.data.frameworks %}
@@ -126,7 +126,9 @@ title: "NodeJS. With less mess"
 
         </div>
 
-        <hr />
+        {% if forloop.last == false %}
+          <hr />
+        {% endif %}
 
       {% endfor %}
 

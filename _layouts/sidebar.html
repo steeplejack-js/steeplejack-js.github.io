@@ -2,11 +2,25 @@
 layout: default
 ---
 
-{% for node in site.data.navbar %}
-  {% if page.url == node.url or page.nav == node.url %}
-    {% assign currentPage = node %}
+{% assign nav_pages = site.empty_array %}
+
+{% for pg in site.pages %}
+
+  {% if pg.docs and pg.url contains page.section %}
+
+    {% if pg.url == page.url %}
+
+    {% endif %}
+
+    {% assign nav_pages = nav_pages | push: pg %}
+
   {% endif %}
+
 {% endfor %}
+
+{% assign nav_pages = nav_pages | sort: 'order' %}
+{% assign prev_page = '' %}
+{% assign next_page = '' %}
 
 {% include navbar.html %}
 
@@ -15,21 +29,31 @@ layout: default
     <div class="col-md-3 sidebar-wrapper">
       <div id="sidebar">
         <ul class="nav nav-pills nav-stacked">
-          {% for item in currentPage.child %}
+          {% for pg in nav_pages %}
 
-            {% assign menuUrl = item.url | prepend: currentPage.url | prepend: site.baseurl %}
             {% assign activeClass = '' %}
+            {% assign prev_id = '' %}
+            {% assign next_id = '' %}
 
-            {% if menuUrl == page.url %}
+            {% if pg.url == page.url %}
               {% assign activeClass = 'active' %}
             {% endif %}
 
+            {% if activeClass == 'active' and forloop.first == false %}
+              {% assign prev_id = forloop.index0 | minus:1 %}
+              {% assign prev_page = nav_pages[prev_id] %}
+            {% endif %}
+
+            {% if activeClass == 'active' and forloop.last == false %}
+              {% assign next_id = forloop.index0 | plus:1 %}
+              {% assign next_page = nav_pages[next_id] %}
+            {% endif %}
+
             <li class="{{ activeClass }}">
-              <a href="{{ menuUrl }}">
-                {{ item.name }}
+              <a href="{{ pg.url }}">
+                {{ pg.title }}
               </a>
             </li>
-
           {% endfor %}
         </ul>
       </div>
@@ -45,23 +69,25 @@ layout: default
       </div>
 
       <div class="action-buttons">
-        {% if page.next or page.prev %}
+        <!--{{ next_page | inspect }}-->
+        {% if prev_page or next_page %}
           <div class="btn-group" role="group">
-            {% if page.prev %}
+            {% if prev_page != '' %}
               <a
                 role="button"
                 class="btn btn-warning"
-                href="{{ page.prev.url | prepend: currentPage.url | prepend: site.baseurl }}">
-                <i class="fa fa-arrow-left"></i> {{ page.prev.name }}
+                href="{{ prev_page.url | prepend: currentPage.url | prepend: site.baseurl }}">
+                <i class="fa fa-arrow-left"></i>
+                {{ prev_page.title }}
               </a>
             {% endif %}
 
-            {% if page.next %}
+            {% if next_page != '' %}
               <a
                 role="button"
                 class="btn btn-info"
-                href="{{ page.next.url | prepend: currentPage.url | prepend: site.baseurl }}">
-                  {{ page.next.name }}
+                href="{{ next_page.url | prepend: currentPage.url | prepend: site.baseurl }}">
+                  {{ next_page.title }}
                   <i class="fa fa-arrow-right"></i>
               </a>
             {% endif %}

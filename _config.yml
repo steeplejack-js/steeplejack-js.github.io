@@ -20,3 +20,5 @@ exclude:
 
 author: Simon Emms
 author_link: http://simonemms.com
+
+empty_array: []
