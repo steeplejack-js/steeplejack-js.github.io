@@ -5,6 +5,10 @@
   }
 }
 
+a {
+  outline: none !important;
+}
+
 .color-danger .navbar.navbar-default {
   @include navbar-color($brand-danger);
 }
