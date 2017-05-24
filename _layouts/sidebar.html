@@ -5,17 +5,9 @@ layout: default
 {% assign nav_pages = site.empty_array %}
 
 {% for pg in site.pages %}
-
-  {% if pg.docs and pg.url contains page.section %}
-
-    {% if pg.url == page.url %}
-
-    {% endif %}
-
+  {% if pg.docs and pg.url contains page.section and pg.sidebar != false %}
     {% assign nav_pages = nav_pages | push: pg %}
-
   {% endif %}
-
 {% endfor %}
 
 {% assign nav_pages = nav_pages | sort: 'order' %}
@@ -87,7 +79,7 @@ layout: default
                 <a
                   role="button"
                   class="btn btn-warning"
-                  href="{{ prev_page.url | prepend: currentPage.url | prepend: site.baseurl }}">
+                  href="{{ prev_page.url | prepend: site.baseurl }}">
                   <i class="fa fa-arrow-left"></i>
                   {{ prev_page.title }}
                 </a>
@@ -97,7 +89,7 @@ layout: default
                 <a
                   role="button"
                   class="btn btn-info"
-                  href="{{ next_page.url | prepend: currentPage.url | prepend: site.baseurl }}">
+                  href="{{ next_page.url | prepend: site.baseurl }}">
                     {{ next_page.title }}
                     <i class="fa fa-arrow-right"></i>
                 </a>
