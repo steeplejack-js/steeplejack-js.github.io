@@ -72,14 +72,26 @@ layout: default
           {{ page.title }}
         </h1>
 
-        {% if page.repo %}
-          <p class="lead">
+        {% if page.module %}
+          <p class="">
             <strong>
-                Module:
+              Module:
             </strong>
 
-            <a href="https://github.com/steeplejack-js/{{ page.repo }}" target="_blank">
-              {{ page.repo }}
+            <a href="https://github.com/steeplejack-js/{{ page.module }}" target="_blank">
+              {{ page.module }}
+            </a>
+          </p>
+        {% endif %}
+
+        {% if page.source %}
+          <p class="ead">
+            <strong>
+              Source:
+            </strong>
+
+            <a href="{{ page.source }}" target="_blank">
+              {{ page.source }}
             </a>
           </p>
         {% endif %}
