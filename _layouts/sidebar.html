@@ -73,16 +73,15 @@ layout: default
         </h1>
 
         {% if page.repo %}
-          <dl class="dl-horizontal">
-            <dt>
-              Module:
-            </dt>
-            <dd>
-              <a href="https://github.com/steeplejack-js/{{ page.repo }}" target="_blank">
-                {{ page.repo }}
-              </a>
-            </dd>
-          </dl>
+          <p class="lead">
+            <strong>
+                Module:
+            </strong>
+
+            <a href="https://github.com/steeplejack-js/{{ page.repo }}" target="_blank">
+              {{ page.repo }}
+            </a>
+          </p>
         {% endif %}
 
         <div>
