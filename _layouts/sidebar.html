@@ -96,6 +96,18 @@ layout: default
           </p>
         {% endif %}
 
+        {% if page.ioc %}
+          <p>
+            <strong>
+              Injector Name:
+            </strong>
+
+            <code>
+              {{ page.ioc }}
+            </code>
+          </p>
+        {% endif %}
+
         <div>
           {{ content }}
         </div>
