@@ -21,6 +21,8 @@ exclude:
 author: Simon Emms
 author_link: http://simonemms.com
 
+permalink: pretty
+
 empty_array: []
 
 colors:
