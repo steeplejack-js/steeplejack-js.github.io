@@ -15,7 +15,7 @@ layout: default
 {% assign next_page = '' %}
 {% assign action_buttons = true %}
 
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-default navbar-fixed-top">
   {% include navbar.html %}
 </nav>
 
@@ -24,7 +24,7 @@ layout: default
 
     <div class="row">
       <div class="col-md-3 sidebar-wrapper">
-        <div id="sidebar" data-spy="affix">
+        <div id="sidebar">
           <ul class="nav nav-sidebar nav-stacked">
             {% for pg in nav_pages %}
 
