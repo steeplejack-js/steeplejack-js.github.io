@@ -10,4 +10,8 @@
     height: 140px;
     visibility: hidden;
   }
+
+  &.site {
+    min-height: calc(100vh - 140px);
+  }
 }
