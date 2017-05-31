@@ -35,6 +35,16 @@ layout: default
           </a>
         </p>
 
+        <div class="badges text-center">
+
+          {% for badge in site.badges %}
+            <a href="{{ badge.url }}" target="_blank">
+              <img src="{{ badge.badge }}" alt="{{ badge.name }}" />
+            </a>
+          {% endfor %}
+
+        </div>
+
         <div class="social_buttons">
 
           <div class="inline-pad">
