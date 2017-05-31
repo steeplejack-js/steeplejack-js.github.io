@@ -2,7 +2,3 @@ _site
 .sass-cache
 .jekyll-metadata
 .idea
-
-api
-concepts
-getting-started
